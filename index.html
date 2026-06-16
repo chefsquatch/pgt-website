@@ -89,7 +89,15 @@
       <p class="eyebrow">Contact</p>
       <h2>Get in touch.</h2>
       <p>Questions, ideas, or want to work together? Drop us a line.</p>
-      <a href="mailto:contact@precisionguessworktech.com" class="btn btn-primary">Email us</a>
+      <form id="contact-form">
+        <input type="hidden" name="access_key" value="f6af59fe-6be6-4d8c-b954-8cf27545599b">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="How can we help?" required></textarea>
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </section>
 
@@ -101,6 +109,39 @@
       </span>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var f = document.getElementById('contact-form');
+      var s = document.getElementById('form-status');
+      if (!f) return;
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+        s.className = 'form-status';
+        s.textContent = 'Sending…';
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(f)
+        })
+          .then(function (r) { return r.json(); })
+          .then(function (d) {
+            if (d.success) {
+              f.reset();
+              s.className = 'form-status ok';
+              s.textContent = 'Thanks — your message was sent. We’ll get back to you.';
+            } else {
+              s.className = 'form-status err';
+              s.textContent = 'Sorry, that didn’t go through. Please try again in a moment.';
+            }
+          })
+          .catch(function () {
+            s.className = 'form-status err';
+            s.textContent = 'Network error — please try again in a moment.';
+          });
+      });
+    })();
+  </script>
 
 </body>
 </html>

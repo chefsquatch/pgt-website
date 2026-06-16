@@ -118,8 +118,19 @@ p { color: #d8d8d8; max-width: 65ch; }
 .badge.soon { color: var(--soon); border-color: rgba(138,138,138,.35); background: rgba(138,138,138,.06); }
 
 /* ---- Contact ---- */
-.contact .btn { margin-top: 8px; }
-.contact .loc { margin-top: 18px; color: var(--muted); }
+.contact form { margin-top: 24px; max-width: 520px; display: flex; flex-direction: column; gap: 12px; }
+.contact input, .contact textarea {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+  color: var(--text); font: inherit; padding: 12px 14px; width: 100%;
+}
+.contact input::placeholder, .contact textarea::placeholder { color: #777; }
+.contact input:focus, .contact textarea:focus { outline: none; border-color: var(--accent); }
+.contact textarea { min-height: 120px; resize: vertical; }
+.contact .btn { align-self: flex-start; margin-top: 4px; }
+.contact .hp { position: absolute; left: -9999px; }
+.form-status { margin-top: 8px; font-size: .95rem; color: var(--muted); min-height: 1.2em; }
+.form-status.ok { color: var(--available); }
+.form-status.err { color: var(--urgent, #ff8a7a); }
 
 /* ---- Footer ---- */
 footer { padding: 40px 0; color: var(--muted); font-size: .85rem; }
