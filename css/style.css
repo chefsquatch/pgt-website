@@ -27,6 +27,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: clip; /* guard against any accidental horizontal overflow (keeps sticky nav) */
 }
 
 a { color: var(--accent-hi); text-decoration: none; }
@@ -92,7 +93,8 @@ p { color: #d8d8d8; max-width: 65ch; }
 /* ---- Products ---- */
 .grid {
   margin-top: 30px; display: grid; gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* min() keeps the 280px track from overflowing very narrow screens */
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
 }
 .card {
   background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
