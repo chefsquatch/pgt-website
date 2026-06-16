@@ -47,7 +47,8 @@ a:hover { color: var(--accent); }
   flex-wrap: wrap; gap: 8px 18px; padding: 14px 22px;
   max-width: var(--maxw); margin: 0 auto;
 }
-.brand { font-weight: 800; letter-spacing: .5px; color: var(--text); font-size: 1.05rem; }
+.brand { font-weight: 800; letter-spacing: .5px; color: var(--text); font-size: 1.05rem; display: inline-flex; align-items: center; gap: 10px; }
+.mark { width: 26px; height: 26px; flex: none; }
 .brand .dot { color: var(--accent); }
 .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
 .nav-links a { color: var(--muted); font-size: .95rem; font-weight: 500; }
