@@ -107,6 +107,8 @@ p { color: #d8d8d8; max-width: 65ch; }
 .card p { color: var(--muted); font-size: .96rem; flex: 1; }
 .card .btn { align-self: flex-start; margin-top: 6px; }
 .note { font-size: .82rem; color: var(--soon); }
+.play-badge { display: inline-block; margin-top: 4px; }
+.play-badge img { height: 52px; width: auto; display: block; }
 
 /* ---- Status badges ---- */
 .badge {
