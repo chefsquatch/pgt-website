@@ -67,6 +67,18 @@
 
         <article class="card">
           <div class="card-head">
+            <h3>Claude Chat Demo</h3>
+            <span class="badge available">Live</span>
+          </div>
+          <p>A clean chat app on the Claude API &mdash; streaming responses, conversation memory, a live weather-tool call, and honest error handling. Small, readable, deployed. Try it right here, or read the source.</p>
+          <div class="card-actions">
+            <button type="button" class="btn btn-primary btn-sm" data-demo-open>Try it live</button>
+            <a href="https://github.com/chefsquatch/claude-chat-demo" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Source</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
             <h3>Kernel</h3>
             <span class="badge dev">In Development</span>
           </div>
@@ -111,6 +123,19 @@
     </div>
   </footer>
 
+  <!-- Live demo modal — embeds the deployed Claude Chat Demo in an iframe.
+       The iframe src is set on first open so the app isn't loaded until asked. -->
+  <dialog id="demo-modal" class="demo-modal" aria-label="Claude Chat Demo — live">
+    <div class="demo-modal-bar">
+      <span class="demo-modal-title">Claude Chat Demo &mdash; live</span>
+      <span class="demo-modal-actions">
+        <a href="https://claude-chat-demo-sigma.vercel.app" target="_blank" rel="noopener" class="demo-open-new">Open in new tab &#8599;</a>
+        <button type="button" class="demo-close" data-demo-close aria-label="Close demo">&#10005;</button>
+      </span>
+    </div>
+    <iframe class="demo-frame" title="Claude Chat Demo" data-src="https://claude-chat-demo-sigma.vercel.app" loading="lazy"></iframe>
+  </dialog>
+
   <script>
     (function () {
       var f = document.getElementById('contact-form');
@@ -140,6 +165,35 @@
             s.className = 'form-status err';
             s.textContent = 'Network error — please try again in a moment.';
           });
+      });
+    })();
+  </script>
+
+  <script>
+    // Live demo modal: open on "Try it live", lazy-load the iframe, close on
+    // the ✕, on backdrop click, or Esc (native <dialog> handles Esc).
+    (function () {
+      var modal = document.getElementById('demo-modal');
+      if (!modal) return;
+      var frame = modal.querySelector('.demo-frame');
+      function open() {
+        if (frame && !frame.src) frame.src = frame.getAttribute('data-src');
+        if (typeof modal.showModal === 'function') modal.showModal();
+        else modal.setAttribute('open', '');
+      }
+      function close() {
+        if (typeof modal.close === 'function') modal.close();
+        else modal.removeAttribute('open');
+      }
+      document.querySelectorAll('[data-demo-open]').forEach(function (b) {
+        b.addEventListener('click', open);
+      });
+      modal.querySelectorAll('[data-demo-close]').forEach(function (b) {
+        b.addEventListener('click', close);
+      });
+      // Click on the backdrop (outside the dialog box) closes it.
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) close();
       });
     })();
   </script>
