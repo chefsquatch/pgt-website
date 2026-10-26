@@ -36,12 +36,12 @@
     cfg.greeting ||
     attr(
       "data-greeting",
-      "Hi — I'm PGT's assistant. I answer from what PGT actually offers, and I'll " +
+      "Hi, I'm PGT's assistant. I answer from what PGT actually offers, and I'll " +
         "tell you straight when something's outside that. What are you trying to build or fix?"
     );
   var TEASER =
     cfg.teaser ||
-    attr("data-teaser", "Ask me anything about PGT — I won't make things up.");
+    attr("data-teaser", "Ask me anything about PGT. I won't make things up.");
   // Auto-open the panel once for a brand-new visitor (desktop only, so it never
   // takes over a phone screen). Set window.PGT_ASSISTANT.autoOpen=false to disable.
   var AUTO_OPEN = cfg.autoOpen !== false && attr("data-auto-open", "true") !== "false";
@@ -239,7 +239,7 @@
     '<div class="pgtw-modal" role="dialog" aria-modal="true" aria-label="Send a message to PGT">' +
     '<div class="pgtw-modal-head">' + MARK +
     '<div class="pgtw-modal-h"><b>Send a message</b>' +
-    "<span>Goes straight to Les — he replies to your email.</span></div>" +
+    "<span>Goes straight to Les, and he replies to your email.</span></div>" +
     '<button class="pgtw-close pgtw-cclose" aria-label="Close">×</button></div>' +
     '<form class="pgtw-cform" novalidate>' +
     '<div class="pgtw-field"><label>Your email *</label>' +
@@ -346,7 +346,7 @@
     d.innerHTML =
       esc(
         fallback ||
-          "Something went wrong on my end — I'd rather tell you than guess."
+          "Something went wrong on my end. I'd rather tell you than guess."
       ) +
       ' <a href="mailto:' + FOUNDER_EMAIL + '">' + esc(FOUNDER_EMAIL) + "</a>";
     log.appendChild(d);
@@ -470,7 +470,7 @@
       })
       .then(function (res) {
         if (res.ok && res.data && res.data.ok) {
-          cNote.textContent = "Thanks — it's on its way to Les. He'll reply to " + email + ".";
+          cNote.textContent = "Thanks, it's on its way to Les. He'll reply to " + email + ".";
           modalForm.hidden = true;
           modalSuccess.hidden = false;
         } else {
@@ -478,13 +478,13 @@
           cStatus.className = "pgtw-cstatus err";
           cStatus.textContent =
             (res.data && res.data.error) ||
-            "That didn't go through — check your email address and try again.";
+            "That didn't go through. Check your email address and try again.";
         }
       })
       .catch(function () {
         cSubmit.disabled = false;
         cStatus.className = "pgtw-cstatus err";
-        cStatus.textContent = "Network error — please try again in a moment.";
+        cStatus.textContent = "Network error. Please try again in a moment.";
       });
   }
 
