@@ -1,16 +1,16 @@
 # Precision Guesswork Technologies (PGT)
 
-> A small studio based in Flint, Michigan that builds small businesses a website with an honest AI assistant. The assistant answers customer questions from the business's real information, takes booking, order and quote requests, and says plainly when it doesn't know. PGT also makes Tinker, a time clock for crews that clocks in from a phone or tablet with a location tag on each punch.
+> A small studio based in Flint, Michigan that builds small businesses anywhere a website with an honest AI assistant. The assistant answers customer questions from the business's real information, takes booking, order and quote requests, and says plainly when it doesn't know. PGT also makes Tinker, a time clock for crews that clocks in from a phone or tablet with a location tag on each punch.
 
-- Location: Flint, Michigan. Serves Genesee County and the rest of Michigan, mostly by text and email.
+- Based in Flint, Michigan. Works with small businesses anywhere in the US, by text and email.
 - Owner: Les Fleming. Contact: lesfleming@precisionguessworktech.com
 - Who it's for: salons, barbershops, restaurants, diners, food trucks, auto repair shops, detailers, lawn care, snow removal, cleaning and handyman businesses.
 
 ## Pages
 - [Home](https://precisionguessworktech.com/): services, live demos, FAQ, contact
-- [Websites for salons and barbershops in Flint](https://precisionguessworktech.com/websites-for-salons.html)
-- [Websites for restaurants in Flint](https://precisionguessworktech.com/websites-for-restaurants.html)
-- [Websites for auto shops and detailers in Flint](https://precisionguessworktech.com/websites-for-auto-shops.html)
-- [Websites for lawn care, snow removal and home services in Flint](https://precisionguessworktech.com/websites-for-lawn-and-snow.html)
+- [Websites for salons and barbershops](https://precisionguessworktech.com/websites-for-salons.html)
+- [Websites for restaurants](https://precisionguessworktech.com/websites-for-restaurants.html)
+- [Websites for auto shops and detailers](https://precisionguessworktech.com/websites-for-auto-shops.html)
+- [Websites for lawn care, snow removal and home services](https://precisionguessworktech.com/websites-for-lawn-and-snow.html)
 - [Live demos](https://demos.precisionguessworktech.com): salon, restaurant, auto shop and home services demo sites
 - [Tinker](https://tinker.precisionguessworktech.com/): crew time clock, $9.99 a month for the whole team, 14-day free trial
