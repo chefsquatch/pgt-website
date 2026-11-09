@@ -16,11 +16,15 @@ PGT company website: static HTML/CSS, served by GitHub Pages at precisionguesswo
 ## Status
 | Item | State | Evidence |
 |---|---|---|
+| work.html footer LinkedIn link | Pushed `68cc457` (main) | Commit on origin/main; live-page check (curl for the profile URL on precisionguessworktech.com/work.html) running at time of writing, result recorded in the next session log line |
 
 ## NEXT
-(fill in)
+- Confirm the live work page shows the LinkedIn link (if the Pages deploy check failed, re-run it before doing anything else).
+- Optional, founder call: add the same LinkedIn link to index.html's footer (only work.html was changed; scope was the founder's ask).
+- When the PGT LinkedIn company page exists (blocked 11/09: account needs connections), consider linking the company page instead of or alongside the personal profile.
 
 ## Decisions (what was decided, why, and the alternative not taken)
+- 2026-11-09: LinkedIn link goes in the work.html footer only, next to GitHub, as plain text "LinkedIn", same markup and new-tab behavior. Why: work.html is the page recruiters and agencies land on; footer keeps the layout unchanged (lowest risk). Not taken: a button in the hero/contact section (more visible, but a layout change the founder didn't ask for) and adding it to every page (scope creep).
 
 ## AI log (where the AI was wrong or risky, and how it was caught)
 
